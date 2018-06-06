@@ -1,7 +1,9 @@
 # grpc-scaffold
 grpc-scaffold aims to bring a opinionated structure to grpc (+grpc-gateway) repositories.
 
+[![GoDoc](https://godoc.org/github.com/jakoblorz/grpc-scaffold?status.svg)](https://godoc.org/github.com/jakoblorz/grpc-scaffold)
 [![Build Status](https://travis-ci.com/jakoblorz/grpc-scaffold.svg?branch=master)](https://travis-ci.com/jakoblorz/grpc-scaffold)
+[![codecov](https://codecov.io/gh/jakoblorz/grpc-scaffold/branch/master/graph/badge.svg)](https://codecov.io/gh/jakoblorz/grpc-scaffold)
 
 Each service protobuf definition gets its own struct which may implement the `endpoint.Registerer` or even `gateway.Controller`. By doing so, a common structure is achieved for each service.
 
