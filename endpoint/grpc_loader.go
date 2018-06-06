@@ -7,25 +7,32 @@ import (
 	"google.golang.org/grpc"
 )
 
+// GRPCLoader loads all registered controller
+// once Listen() is called
 type GRPCLoader struct {
 	address     string
 	opts        []grpc.ServerOption
-	controllers []EndpointRegisterer
+	controllers []Registerer
 }
 
+// NewGRPCLoader will create a new endpoint.GRPCLoader
 func NewGRPCLoader(address string, opts ...grpc.ServerOption) GRPCLoader {
 
 	return GRPCLoader{
 		address:     address,
 		opts:        opts,
-		controllers: make([]EndpointRegisterer, 0),
+		controllers: make([]Registerer, 0),
 	}
 }
 
-func (c GRPCLoader) RegisterController(s EndpointRegisterer) {
+// RegisterController appends the controller to the internal
+// controller register
+func (c GRPCLoader) RegisterController(s Registerer) {
 	c.controllers = append(c.controllers, s)
 }
 
+// Listen creates a new grpc server listening for requests
+// after having loaded all previously registerer controllers
 func (c GRPCLoader) Listen() error {
 
 	server := grpc.NewServer(c.opts...)
