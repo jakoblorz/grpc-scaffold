@@ -29,7 +29,7 @@
   branch = "master"
   name = "github.com/jakoblorz/grpc-scaffold"
   packages = ["endpoint"]
-  revision = "8174ba62dd5ba60bfe7ab9e05725fab1e6bc3b79"
+  revision = "7acb2e328ea730b558465c035a34ef7db4c973b8"
 
 [[projects]]
   branch = "master"

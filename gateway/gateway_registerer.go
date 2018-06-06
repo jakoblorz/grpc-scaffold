@@ -6,6 +6,8 @@ import (
 	"google.golang.org/grpc"
 )
 
-type GatewayRegisterer interface {
+// Registerer defines the requirement for a grpc controller
+// to be registerable as gateway reachable endpoint
+type Registerer interface {
 	RegisterGateway(context.Context, *runtime.ServeMux, string, []grpc.DialOption) error
 }
