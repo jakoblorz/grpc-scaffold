@@ -2,6 +2,6 @@ package endpoint
 
 import "google.golang.org/grpc"
 
-type Controller interface {
+type EndpointRegisterer interface {
 	RegisterEndpoint(*grpc.Server)
 }

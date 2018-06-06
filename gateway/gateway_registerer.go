@@ -6,6 +6,6 @@ import (
 	"google.golang.org/grpc"
 )
 
-type Controller interface {
+type GatewayRegisterer interface {
 	RegisterGateway(context.Context, *runtime.ServeMux, string, []grpc.DialOption) error
 }
